@@ -69,3 +69,27 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+    #- Run github/codeql-action/analyze@v1
+  with:
+    output: ../results
+    upload: true
+    cleanup-level: brutal
+    add-snippets: false
+    skip-queries: false
+    checkout_path: /home/runner/work/Jaytee94/Jaytee94
+    upload-database: true
+    token: ***
+    matrix: {
+    "language": "javascript"
+  }
+  env:
+    CODEQL_ACTION_RUN_MODE: Action
+    CODEQL_ACTION_VERSION: 1.0.12
+    CODEQL_ACTION_FEATURE_SARIF_COMBINE: true
+    CODEQL_ACTION_FEATURE_WILL_UPLOAD: true
+    CODEQL_ACTION_FEATURE_MULTI_LANGUAGE: true
+    CODEQL_ACTION_FEATURE_SANDWICH: true
+    CODEQL_ACTION_ANALYSIS_KEY: .github/workflows/codeql-analysis.yml:analyze
+    CODEQL_WORKFLOW_STARTED_AT: 2021-09-01T00:06:19.027Z
+    CODEQL_RAM: 6500
+Extracting javascript
